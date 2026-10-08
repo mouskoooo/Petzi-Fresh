@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0d0d0d">
 <title>Petzi Fresh</title>
 <link rel="stylesheet" href="style.css">
@@ -10,24 +10,98 @@
 </head>
 <body>
 <div class="app">
-<header class="hero">
-<img class="logo" src="IMG_1913.jpeg" alt="Petzi Fresh">
-<div><b>PETZI FRESH</b><small>Bienvenue dans votre espace</small></div>
-</header>
-<main>
-<h1>Petzi Fresh</h1><p class="intro">Découvrez nos produits et nos liens.</p>
-<div class="search"><span>⌕</span><input id="search" placeholder="Rechercher un produit..."></div>
-<section id="products" class="grid"></section>
-<section id="links" class="links hidden">
-<a href="https://t.me/" target="_blank">✈️ <b>Canal Telegram</b><span>›</span></a>
-<a href="https://t.me/" target="_blank">💬 <b>Contact</b><span>›</span></a>
-</section>
-</main>
-<nav>
-<button class="active" data-tab="products">🛍️<small>PRODUITS</small></button>
-<button data-tab="links">🔗<small>LINKS</small></button>
-</nav>
+  <header class="hero">
+    <img id="heroLogo" class="logo" src="IMG_1913.jpeg" alt="Petzi Fresh">
+    <div class="heroText">
+      <b id="heroName">PETZI FRESH</b>
+      <small id="heroSub">Bienvenue dans votre espace</small>
+    </div>
+    <button id="adminOpen" class="moreBtn" aria-label="Administration">•••</button>
+  </header>
+
+  <main>
+    <section id="home">
+      <h1 id="mainTitle">Petzi Fresh</h1>
+      <p id="mainIntro" class="intro">Découvrez nos produits et nos liens.</p>
+
+      <div id="searchBox" class="search">
+        <span>⌕</span>
+        <input id="search" placeholder="Rechercher un produit..." autocomplete="off">
+      </div>
+
+      <section id="products" class="grid"></section>
+      <section id="links" class="links hidden"></section>
+    </section>
+  </main>
+
+  <nav>
+    <button class="active" data-tab="products">🛍️<small id="productsTab">PRODUITS</small></button>
+    <button data-tab="links">🔗<small id="linksTab">LINKS</small></button>
+  </nav>
 </div>
+
+<div id="adminModal" class="modal hidden">
+  <div class="modalCard">
+    <div class="modalHead">
+      <div><b>⚙️ ADMIN</b><small>Modifier ta Mini App</small></div>
+      <button id="adminClose" class="closeBtn">×</button>
+    </div>
+
+    <div id="pinView">
+      <label>Code administrateur</label>
+      <input id="pinInput" type="password" inputmode="numeric" placeholder="Code">
+      <button id="pinBtn" class="primary">Entrer</button>
+      <p id="pinError" class="error hidden">Code incorrect.</p>
+    </div>
+
+    <div id="editorView" class="hidden">
+      <div class="editorTabs">
+        <button class="editorTab active" data-editor="general">Général</button>
+        <button class="editorTab" data-editor="products">Produits</button>
+        <button class="editorTab" data-editor="links">Liens</button>
+        <button class="editorTab" data-editor="design">Design</button>
+      </div>
+
+      <section class="editorSection active" data-panel="general">
+        <label>Nom affiché</label><input id="eName">
+        <label>Sous-titre</label><input id="eSub">
+        <label>Titre principal</label><input id="eTitle">
+        <label>Texte d'accueil</label><textarea id="eIntro"></textarea>
+        <label>Texte onglet produits</label><input id="eProductsTab">
+        <label>Texte onglet liens</label><input id="eLinksTab">
+        <label>Logo (image)</label>
+        <input id="logoFile" type="file" accept="image/*">
+        <button id="removeLogo" class="secondary">Remettre le logo d'origine</button>
+      </section>
+
+      <section class="editorSection" data-panel="products">
+        <div id="productEditor"></div>
+        <button id="addProduct" class="secondary">＋ Ajouter un produit</button>
+      </section>
+
+      <section class="editorSection" data-panel="links">
+        <div id="linkEditor"></div>
+        <button id="addLink" class="secondary">＋ Ajouter un lien</button>
+      </section>
+
+      <section class="editorSection" data-panel="design">
+        <label>Couleur de fond</label><input id="eBg" type="color">
+        <label>Couleur des cartes</label><input id="eCard" type="color">
+        <label>Couleur d'accent</label><input id="eAccent" type="color">
+        <label>Couleur du texte secondaire</label><input id="eMuted" type="color">
+        <label>Rayon des cartes</label><input id="eRadius" type="range" min="8" max="30" step="1">
+        <div class="rangeValue" id="radiusValue"></div>
+      </section>
+
+      <div class="adminActions">
+        <button id="resetBtn" class="danger">Réinitialiser</button>
+        <button id="saveBtn" class="primary">💾 Enregistrer</button>
+      </div>
+      <p class="adminNote">Les modifications sont enregistrées sur cet appareil. Pour les rendre visibles à tous les utilisateurs, il faudra ensuite connecter un stockage en ligne sécurisé.</p>
+    </div>
+  </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>

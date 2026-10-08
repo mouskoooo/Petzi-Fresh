@@ -1,14 +1,16 @@
-# PETZI FRESH — Telegram Mini App
+# Petzi Fresh — version ADMIN
 
-## Fichiers
-- index.html : structure de l'application
-- style.css : design mobile
-- app.js : produits, recherche, navigation et intégration Telegram
+Cette version ajoute un panneau ADMIN directement dans la Mini App.
 
-## À personnaliser
-Dans `app.js`, remplace les produits d'exemple par les vrais produits, images, informations et prix que tu souhaites afficher.
+Code ADMIN par défaut : 1234
 
-Dans `index.html`, remplace les liens `https://t.me/` par les liens Telegram définitifs.
+Fonctions :
+- modifier le nom, sous-titre, titre et textes
+- modifier le logo
+- ajouter/modifier/supprimer des produits
+- modifier prix, catégorie, image
+- ajouter/modifier/supprimer des liens
+- modifier plusieurs paramètres visuels
+- enregistrer les réglages dans le navigateur
 
-## Mise en ligne
-Le site doit être publié en HTTPS, par exemple avec GitHub Pages. Ensuite, l'URL HTTPS de la Mini App pourra être reliée au bot @PetziFreshhh_BOT via BotFather.
+IMPORTANT : cette version est un éditeur local. Les changements sont enregistrés sur l'appareil qui les effectue. Pour que les changements soient synchronisés automatiquement pour tous les utilisateurs, il faut ajouter une base de données/backend et une vérification Telegram côté serveur.
