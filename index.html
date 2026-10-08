@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <title>Petzi Fresh</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div class="brand-mark">PF</div>
+      <div>
+        <div class="brand">PETZI FRESH</div>
+        <div class="subtitle">Bienvenue dans votre espace</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <h1>Petzi Fresh</h1>
+        <p>Découvrez nos produits et nos liens.</p>
+      </section>
+
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="search" type="search" placeholder="Rechercher un produit..." autocomplete="off">
+      </div>
+
+      <section id="products" class="grid"></section>
+
+      <section id="links" class="links hidden">
+        <button class="link-card" data-url="https://t.me/">
+          <span class="icon">✈️</span>
+          <span><b>Canal Telegram</b><small>Rejoindre le canal</small></span>
+          <span>›</span>
+        </button>
+        <button class="link-card" data-url="https://t.me/">
+          <span class="icon">💬</span>
+          <span><b>Contact</b><small>Nous contacter</small></span>
+          <span>›</span>
+        </button>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-tab="products">🛍️<span>PRODUITS</span></button>
+      <button class="nav-btn" data-tab="links">🔗<span>LINKS</span></button>
+    </nav>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
